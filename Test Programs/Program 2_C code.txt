@@ -1,0 +1,9 @@
+// The folowing program calculate the factorial of a given number in variable X 
+// NOTE: X is a 16-bit number 
+int x = 6;
+int Factorial_Result = 1;
+while (x != 0) {
+    Factorial_Result = Factorial_Result * x;
+    x = x - 1;
+}
+// Factorial_Result = 720

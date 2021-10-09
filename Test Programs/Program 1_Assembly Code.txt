@@ -1,0 +1,18 @@
+# $s0 = x ; $s1 = y ; $s2 = GCD_Result 
+0x0000_0000: add  $s0 , $0 , $0
+0x0000_0004: addi $s0 , $0 , 0x78
+0x0000_0008: add  $s1 , $0 , $0
+0x0000_000C: addi $s1 , $0 , 0xB4
+0x0000_0010: add  $s2 , $0 , $0
+Again : 
+0x0000_0014: beq  $s0 , $s1, end_while
+0x0000_0018: slt  $t1 , $s0, $s1
+0x0000_001C: beq  $t1 , $0 , else
+0x0000_0020: sub  $s1 , $s1, $s0
+0x0000_0024: j    Again
+else :
+0x0000_0028: sub  $s0 , $s0, $s1
+0x0000_002C: j    Again
+end_while : 
+0x0000_0030: add  $s2 , $0 , $s0
+0x0000_0034: sw   $s2 , 0($0)

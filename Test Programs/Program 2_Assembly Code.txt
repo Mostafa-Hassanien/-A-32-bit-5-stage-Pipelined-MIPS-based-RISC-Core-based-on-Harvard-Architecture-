@@ -1,0 +1,12 @@
+# $s0 = x ; $s1 = Factorial_Result  
+0x0000_0000: add  $s0 , $0 , $0
+0x0000_0004: addi $s0 , $0 , 0x6
+0x0000_0008: add  $s1 , $0 , $0
+0x0000_000C: addi $s1 , $0 , 0x1
+Again : 
+0x0000_0010: beq  $s0 , $0, end_while
+0x0000_0014: mul  $s1 , $s1, $s0
+0x0000_0018: addi $s0 , $s0, -1
+0x0000_001C: j    Again
+end_while : 
+0x0000_0020: sw   $s1 , 0($0)

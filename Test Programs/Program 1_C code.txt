@@ -1,0 +1,14 @@
+// The folowing program calculate the GCD of two given numbers in variables X and Y
+// NOTE: X and Y are in the range of [-32768,32767]
+int x = 120;
+int y = 180;
+int GCD_Result = 0;
+while (x != y) {
+    if(x < y) {
+	   y = y - x;
+	}
+    else {
+	   x = x - y;
+	}
+}
+GCD_Result = x;   // GCD_Result = 60
